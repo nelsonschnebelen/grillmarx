@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-char-950 text-bone font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-ember text-char-950;
+  }
+
+  /* Brass focus ring for accessibility without breaking the dark aesthetic */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brass ring-offset-2 ring-offset-char-950;
+  }
+}
+
+@layer components {
+  .container-rail {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.7rem] uppercase tracking-mega text-ember-300;
+  }
+
+  .display-line {
+    @apply font-display font-light leading-[0.95] tracking-tight;
+  }
+
+  /* Film grain overlay for the dark, photographic feel */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Thin hairline divider used throughout */
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-char-600 to-transparent;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-ember transition-transform duration-500;
+  }
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  .btn-ember {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember px-7 py-3 font-sans text-[0.72rem] uppercase tracking-mega text-char-950 transition-all duration-300 hover:bg-ember-400 hover:shadow-[0_0_40px_-8px_rgba(225,85,31,0.7)];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-char-600 px-7 py-3 font-sans text-[0.72rem] uppercase tracking-mega text-bone transition-all duration-300 hover:border-brass hover:text-brass;
+  }
+}
+
+/* Custom cursor — only active on devices with a fine pointer */
+@media (pointer: fine) {
+  .cursor-hidden,
+  .cursor-hidden * {
+    cursor: none !important;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
