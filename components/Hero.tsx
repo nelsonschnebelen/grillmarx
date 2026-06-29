@@ -20,9 +20,9 @@ export default function Hero() {
       <div className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/hero.svg"
-          alt="A dry-aged steak finishing over open coals"
-          className="h-full w-full object-cover"
+          src="/images/hero.jpg"
+          alt="A hand-cut bone-in ribeye finishing over open flame"
+          className="h-full w-full object-cover object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-char-950 via-char-950/60 to-char-950/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-char-950/70 to-transparent" />

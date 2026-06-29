@@ -71,8 +71,8 @@ export default function StoryPage() {
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/story.svg"
-                  alt="Chef tending steaks over a live-fire hearth"
+                  src="/images/olney.jpg"
+                  alt="Inside the GrillMarX flagship in Olney"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-char-950/50 to-transparent" />

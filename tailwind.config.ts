@@ -24,10 +24,13 @@ const config: Config = {
         oxblood: "#6b1d1d",
         brass: "#c9a14a",
         bone: "#f3ede2",
+        // GrillMarX brand red (the circled "x" in the logo)
+        marx: "#b5242b",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        slab: ['"Roboto Slab"', "Rockwell", "Georgia", "serif"],
       },
       letterSpacing: {
         kilo: "0.42em",

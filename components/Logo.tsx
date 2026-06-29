@@ -1,8 +1,13 @@
 import Link from "next/link";
 
 /**
- * Grillmarx wordmark — a flame-struck "G" monogram plus the name.
- * Pure SVG so it stays crisp and recolorable; no image dependency.
+ * GrillMarX wordmark — a recreation of the client's logo: a heavy slab-serif
+ * "GrillMar" with the signature brand-red, hand-circled "x", and the
+ * "Steakhouse & Raw Bar" tagline beneath. Rendered as live text + an inline
+ * SVG ring so it stays crisp at any size and recolors for the dark UI.
+ *
+ * Drop-in note: if the client supplies the official vector (.svg/.ai), replace
+ * the markup below with their file — the letterforms here approximate it.
  */
 export default function Logo({
   className = "",
@@ -14,34 +19,32 @@ export default function Logo({
   return (
     <Link
       href="/"
-      aria-label="Grillmarx — home"
-      className={`group inline-flex items-center gap-3 ${className}`}
+      aria-label="GrillMarX Steakhouse & Raw Bar — home"
+      className={`group inline-flex select-none flex-col leading-none ${className}`}
     >
-      <svg
-        width="34"
-        height="34"
-        viewBox="0 0 48 48"
-        fill="none"
-        className="shrink-0"
-        aria-hidden
-      >
-        <circle
-          cx="24"
-          cy="24"
-          r="22.5"
-          stroke="currentColor"
-          strokeOpacity="0.35"
-          strokeWidth="1"
-        />
-        {/* ember flame */}
-        <path
-          d="M24 11c2.6 4.2 6.4 6.2 6.4 11.2 0 2-.9 3.7-2.3 4.9.5-1.6.2-3.3-1-4.6.2 2.7-1.6 4.1-2.9 5.4-1.5 1.5-2.7 3-2.7 5.3 0 3.4 2.6 5.8 6 5.8-6.6 1.6-12-2.3-12-8.2 0-3.6 2-6.1 3.7-8.6C18.7 17 21.6 14.6 24 11Z"
-          fill="#e1551f"
-        />
-      </svg>
+      <span className="flex items-baseline font-slab text-[1.45rem] font-extrabold tracking-[-0.01em] text-bone transition-colors duration-300 group-hover:text-white">
+        GrillMar
+        <span className="relative inline-block px-[0.04em] text-marx">
+          x
+          {/* hand-drawn ring around the x */}
+          <svg
+            viewBox="0 0 40 34"
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[1.55em] w-[1.85em] -translate-x-1/2 -translate-y-[54%] -rotate-6"
+          >
+            <path
+              d="M20 3.2c8.4-.4 16.2 2.3 16.6 7.6.5 6.2-9.1 11.4-18.8 11.7C8.7 22.7 2.3 19 2.6 12.9 2.9 7 11 3.9 20 3.2Z"
+              fill="none"
+              stroke="#b5242b"
+              strokeWidth="2.1"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+      </span>
       {!compact && (
-        <span className="font-display text-[1.35rem] font-medium uppercase tracking-[0.2em] text-bone transition-colors group-hover:text-brass">
-          Grillmarx
+        <span className="mt-[3px] font-sans text-[0.5rem] font-medium uppercase tracking-[0.34em] text-bone/70">
+          Steakhouse &amp; Raw Bar
         </span>
       )}
     </Link>

@@ -124,8 +124,8 @@ export default function HomePage() {
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/cta.svg"
-            alt="A warm, full dining room at dusk"
+            src="/images/falls-church.jpg"
+            alt="A warm, full GrillMarX dining room"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-char-950/80" />

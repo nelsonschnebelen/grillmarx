@@ -8,7 +8,7 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Menus",
   description:
-    "Dry-aged cuts, raw bar, live-fire starters, and house signatures — the Grillmarx menu, shared across all four houses.",
+    "Dry-aged cuts, raw bar, live-fire starters, and house signatures — the GrillMarX menu, shared across all four houses.",
 };
 
 const noteLabel: Record<string, string> = {
@@ -27,7 +27,7 @@ export default function MenusPage() {
             The menu, <span className="italic text-ember">house-wide</span>
           </>
         }
-        lede="One core menu runs across every Grillmarx. Each house then adds its own signature cut — the dish you can only get in that city."
+        lede="One core menu runs across every GrillMarX. Each house then adds its own signature cut — the dish you can only get in that city."
       />
 
       {/* Sticky section nav */}
@@ -103,8 +103,8 @@ export default function MenusPage() {
               House signatures
             </h2>
             <p className="mt-4 max-w-xl text-bone/60">
-              Each kitchen keeps one cut to itself. Travel the country, taste
-              all four.
+              Each kitchen keeps one cut to itself. Make the rounds across all
+              four houses.
             </p>
           </Reveal>
           <div className="mt-10 grid gap-px overflow-hidden rounded-sm bg-char-700 sm:grid-cols-2 lg:grid-cols-4">

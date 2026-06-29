@@ -40,7 +40,7 @@ export default function PrivateEventsPage() {
             <span className="italic text-ember">over our fire</span>
           </>
         }
-        lede="From a twelve-seat chef's table to a full buyout, every Grillmarx house hosts private events with a dedicated team."
+        lede="From a twelve-seat chef's table to a full buyout, every GrillMarX house hosts private events with a dedicated team."
       />
 
       {/* Spaces */}
@@ -72,8 +72,8 @@ export default function PrivateEventsPage() {
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/events.svg"
-            alt="A private dining room set for an event"
+            src="/images/college-park.jpg"
+            alt="A GrillMarX dining room set for a private event"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-char-950/85" />

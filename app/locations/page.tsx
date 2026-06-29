@@ -17,12 +17,12 @@ export default function LocationsPage() {
         eyebrow="Find Your House"
         title={
           <>
-            Four cities.
+            Four houses.
             <br />
             <span className="italic text-ember">Four characters.</span>
           </>
         }
-        lede="Same fire, same welcome — but no two Grillmarx houses are alike. Choose yours."
+        lede="Same fire, same welcome — but no two GrillMarX houses are alike. Choose yours."
       />
 
       <div className="container-rail py-20 md:py-28">
