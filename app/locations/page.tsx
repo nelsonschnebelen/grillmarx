@@ -7,7 +7,7 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Locations",
   description:
-    "Four Grillmarx houses — Austin, Chicago, Miami, and Denver. Find hours, addresses, and reservations for each.",
+    "Four GrillMarX houses — Olney, Columbia, College Park, and Falls Church. Find hours, addresses, and reservations for each.",
 };
 
 export default function LocationsPage() {
@@ -47,7 +47,7 @@ export default function LocationsPage() {
                     className="absolute left-5 top-5 rounded-full px-3 py-1 text-[0.6rem] uppercase tracking-mega text-char-950"
                     style={{ backgroundColor: loc.accent }}
                   >
-                    est. {loc.established}
+                    {loc.established ? `est. ${loc.established}` : "Steakhouse & Raw Bar"}
                   </span>
                 </div>
 

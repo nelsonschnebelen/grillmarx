@@ -7,7 +7,7 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Reservations",
   description:
-    "Reserve a table at any Grillmarx house — Austin, Chicago, Miami, or Denver.",
+    "Reserve a table at any GrillMarX house — Olney, Columbia, College Park, or Falls Church.",
 };
 
 export default function ReservationsPage() {

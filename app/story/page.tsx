@@ -8,14 +8,20 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "How Grillmarx grew from one live-fire hearth on Rainey Street into four houses across the country.",
+    "How GrillMarX grew from one neighborhood room in Olney, Maryland into four family-owned houses across Maryland and Virginia.",
 };
 
+// Order by opening year where it's published; houses without a published year
+// keep their listed order and show their neighborhood instead of a date.
 const timeline = locations
   .slice()
-  .sort((a, b) => Number(a.established) - Number(b.established))
+  .sort((a, b) => {
+    const ay = a.established ? Number(a.established) : Infinity;
+    const by = b.established ? Number(b.established) : Infinity;
+    return ay - by;
+  })
   .map((l) => ({
-    year: l.established,
+    marker: l.established || l.state,
     city: l.city,
     text: l.tagline,
   }));
@@ -32,7 +38,7 @@ export default function StoryPage() {
             <span className="italic text-ember">A decade of fire.</span>
           </>
         }
-        lede="Grillmarx is what happens when you refuse to put steak on a gas grill and refuse to treat dinner like a transaction."
+        lede="GrillMarX is what happens when a family decides their neighborhood deserves a real steakhouse & raw bar — upscale food, easy welcome, no airs."
       />
 
       {/* Narrative */}
@@ -46,17 +52,16 @@ export default function StoryPage() {
               </p>
               <div className="mt-8 space-y-5 text-lg leading-relaxed text-bone/70">
                 <p>
-                  In 2014 we lit a single live-fire hearth on Austin's Rainey
-                  Street and built a room around it — loud, warm, and run by
-                  people who actually wanted you there. We dry-aged our own
-                  beef in a glass room so guests could watch it happen. We
-                  carved tableside. We stayed open late.
+                  In 2010 we opened a single room in Olney, Maryland, and built
+                  it around two things people actually wanted: hand-cut steaks
+                  off a hot grill and a raw bar stocked daily. Upscale food, but
+                  a room you could show up to in jeans.
                 </p>
                 <p>
-                  It worked. So we did it again — in Chicago, then Miami, then
-                  Denver — never copy-pasting the room, always keeping the
-                  fire. Today four Grillmarx houses share one obsession and
-                  zero shortcuts.
+                  It worked. So we did it again — in Columbia, in College Park,
+                  and across the river in Falls Church — never copy-pasting the
+                  room, always keeping the standard. Today four family-owned
+                  GrillMarX houses share one obsession and zero shortcuts.
                 </p>
               </div>
             </Reveal>
@@ -115,7 +120,7 @@ export default function StoryPage() {
                 <span className="absolute -left-[2.55rem] top-1.5 h-3 w-3 rounded-full bg-ember ring-4 ring-char-950" />
                 <div className="flex flex-wrap items-baseline gap-4">
                   <span className="font-display text-4xl font-light text-brass">
-                    {t.year}
+                    {t.marker}
                   </span>
                   <h3 className="font-display text-2xl font-light text-bone">
                     {t.city}

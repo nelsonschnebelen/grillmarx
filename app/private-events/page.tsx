@@ -7,7 +7,7 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Private Events",
   description:
-    "Private dining, buyouts, and celebrations at Grillmarx — Austin, Chicago, Miami, and Denver.",
+    "Private dining, buyouts, and celebrations at GrillMarX — Olney, Columbia, College Park, and Falls Church.",
 };
 
 const spaces = [

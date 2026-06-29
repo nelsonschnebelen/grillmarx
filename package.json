@@ -2,7 +2,7 @@
   "name": "grillmarx",
   "version": "1.0.0",
   "private": true,
-  "description": "Grillmarx — a modern American steakhouse. Four locations, one fire.",
+  "description": "GrillMarX Steakhouse & Raw Bar — four houses across Maryland and Virginia.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

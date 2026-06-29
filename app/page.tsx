@@ -40,11 +40,12 @@ export default function HomePage() {
           <div className="md:col-span-6 md:col-start-7">
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-bone/75">
-                Grillmarx began with a single live-fire hearth on Rainey Street
-                and a stubborn idea: that a steakhouse should feel like a
-                living room with a 1,000-degree heart. A decade later we keep
-                four houses across the country — each one different, each one
-                built on the same three things.
+                GrillMarX began in 2010 as a single neighborhood room in
+                Olney, Maryland, with a stubborn idea: that a steakhouse should
+                feel like a living room with a serious grill at its heart. More
+                than a decade later we keep four family-owned houses across
+                Maryland and Virginia — each one different, each one built on
+                the same three things.
               </p>
             </Reveal>
           </div>

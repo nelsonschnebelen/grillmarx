@@ -3,14 +3,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const site = {
-  name: "Grillmarx",
-  legalName: "Grillmarx Steakhouse",
+  name: "GrillMarX",
+  legalName: "GrillMarX Steakhouse & Raw Bar",
   tagline: "Four houses. One fire.",
   description:
-    "Grillmarx is a modern American steakhouse with four houses — Austin, Chicago, Miami, and Denver. Dry-aged cuts, hardwood coals, and a room that knows your name.",
-  founded: "2014",
+    "GrillMarX is a family-owned steakhouse & raw bar with four neighborhood houses across Maryland and Virginia — Olney, Columbia, College Park, and Falls Church. Hand-cut steaks, fresh seafood, and a room that knows your name.",
+  founded: "2010",
   email: "hello@grillmarx.com",
-  phone: "(512) 555-0142",
+  phone: "(301) 570-1111",
   social: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
@@ -28,15 +28,15 @@ export const nav = [
 // The pillars that define the brand — used on the home page and story page.
 export const pillars = [
   {
-    title: "The Age Room",
-    body: "Every house ages its own beef in a glass-walled room — 28 to 45 days, never rushed, never hidden.",
+    title: "Hand-Cut, Never Frozen",
+    body: "Steaks and chops are cut in house and grilled to order over high heat — the marks on the plate are the whole idea.",
   },
   {
-    title: "Live Fire Only",
-    body: "No gas, no shortcuts. Hardwood and lump coal, lit before the first guest and tended until the last.",
+    title: "A Proper Raw Bar",
+    body: "Oysters, shrimp, and cold-water shellfish on ice. Steakhouse & raw bar means we take the seafood half just as seriously.",
   },
   {
-    title: "A Room That Remembers",
-    body: "Four cities, four characters, one standard of hospitality — we'd rather know your name than your reservation.",
+    title: "Family-Owned Hospitality",
+    body: "Four neighborhood houses across Maryland and Virginia, run by one family — upscale food, easy welcome.",
   },
 ];

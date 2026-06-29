@@ -54,7 +54,8 @@ export default function LocationDetail({
               className="text-xs uppercase tracking-mega"
               style={{ color: loc.accent }}
             >
-              {loc.neighborhood} · est. {loc.established}
+              {loc.neighborhood}
+              {loc.established ? ` · est. ${loc.established}` : ""}
             </p>
             <h1 className="display-line mt-4 text-6xl text-bone md:text-8xl">
               {loc.city}
@@ -184,7 +185,7 @@ export default function LocationDetail({
                   className="text-xs uppercase tracking-mega"
                   style={{ color: o.accent }}
                 >
-                  {o.state} · est. {o.established}
+                  {o.neighborhood} · {o.state}
                 </p>
                 <h3 className="mt-3 font-display text-3xl font-light text-bone transition-colors group-hover:text-ember-300">
                   {o.city}

@@ -1,7 +1,8 @@
 # Grillmarx — Steakhouse Website
 
-A modern American steakhouse marketing site for **Grillmarx**, with four houses:
-**Austin · Chicago · Miami · Denver**.
+A marketing site for **GrillMarX Steakhouse & Raw Bar**, a family-owned group
+with four houses across Maryland and Virginia:
+**Olney · Columbia · College Park · Falls Church**.
 
 Built as a fast, photography-led site inspired by the restraint of Sparrow
 Italia, with a **traditional sticky navigation bar** and a few deliberately

@@ -12,7 +12,7 @@ import EmberField from "./EmberField";
 export default function Hero() {
   const reduced = useReducedMotion();
 
-  const lines = ["Dry-aged.", "Live fire.", "Four houses."];
+  const lines = ["Hand-cut.", "Live fire.", "Four houses."];
 
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden">
@@ -38,7 +38,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="eyebrow mb-6"
         >
-          Austin · Chicago · Miami · Denver
+          Olney · Columbia · College Park · Falls Church
         </motion.p>
 
         <h1 className="display-line text-[clamp(3.2rem,11vw,9rem)] text-bone">
@@ -77,7 +77,8 @@ export default function Hero() {
             See the Menu
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-bone/60 sm:ml-4">
-            A modern American steakhouse, tended by live fire since 2014.
+            A family-owned steakhouse &amp; raw bar, serving the neighborhood
+            since 2010.
           </p>
         </motion.div>
       </div>

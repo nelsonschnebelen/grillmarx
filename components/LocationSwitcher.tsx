@@ -46,7 +46,8 @@ export default function LocationSwitcher() {
                     className="font-sans text-xs uppercase tracking-mega transition-opacity duration-500"
                     style={{ opacity: on ? 0.8 : 0.3 }}
                   >
-                    {l.state} · est. {l.established}
+                    {l.state}
+                    {l.established ? ` · est. ${l.established}` : ""}
                   </span>
                 </button>
               </li>
