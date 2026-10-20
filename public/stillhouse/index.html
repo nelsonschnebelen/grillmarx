@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Private Events · Stillhouse Steakhouse — Nashville</title>
+    <meta
+      name="description"
+      content="Host your private event at Stillhouse Steakhouse in Nashville — private dining rooms, semi-private spaces, and full buyouts. Request your date online."
+    />
+    <meta name="theme-color" content="#15110c" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --espresso: #15110c;
+        --espresso-2: #1d1711;
+        --panel: #241d15;
+        --panel-2: #2c231a;
+        --line: #3b3124;
+        --cream: #f4ece0;
+        --cream-dim: rgba(244, 236, 224, 0.68);
+        --cream-faint: rgba(244, 236, 224, 0.45);
+        --brass: #c2994f;
+        --brass-bright: #dab36b;
+        --green: #27503c;
+        --green-bright: #3c7256;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--espresso);
+        color: var(--cream);
+        font-family: "Inter", system-ui, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ::selection {
+        background: var(--brass);
+        color: var(--espresso);
+      }
+
+      .rail {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .serif {
+        font-family: "Playfair Display", Georgia, serif;
+      }
+
+      .eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--brass-bright);
+        font-weight: 500;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.95rem 1.9rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+      .btn-brass {
+        background: var(--brass);
+        color: var(--espresso);
+      }
+      .btn-brass:hover {
+        background: var(--brass-bright);
+        box-shadow: 0 0 36px -10px rgba(194, 153, 79, 0.8);
+      }
+      .btn-ghost {
+        border-color: rgba(244, 236, 224, 0.28);
+        color: var(--cream);
+      }
+      .btn-ghost:hover {
+        border-color: var(--brass-bright);
+        color: var(--brass-bright);
+      }
+
+      /* ── Top bar ─────────────────────────────── */
+      header.bar {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 50;
+        transition: background 0.4s ease, border-color 0.4s ease;
+        border-bottom: 1px solid transparent;
+      }
+      header.bar.scrolled {
+        background: rgba(21, 17, 12, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom-color: var(--line);
+      }
+      .bar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .wordmark {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+      .wordmark .name {
+        font-size: 1.3rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .wordmark .name b {
+        color: var(--brass-bright);
+        font-weight: 500;
+      }
+      .wordmark .sub {
+        font-size: 0.52rem;
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+        color: var(--cream-faint);
+        margin-top: 5px;
+        font-family: "Inter", sans-serif;
+      }
+      .bar .btn {
+        padding: 0.7rem 1.4rem;
+      }
+      @media (max-width: 620px) {
+        .bar .btn {
+          display: none;
+        }
+      }
+
+      /* ── Hero ────────────────────────────────── */
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+      }
+      .hero img.bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero .scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            var(--espresso) 2%,
+            rgba(21, 17, 12, 0.55) 45%,
+            rgba(21, 17, 12, 0.35) 100%
+          ),
+          linear-gradient(to right, rgba(21, 17, 12, 0.8), rgba(21, 17, 12, 0.1));
+      }
+      .hero .rail {
+        position: relative;
+        z-index: 2;
+        padding-top: 120px;
+        padding-bottom: 72px;
+      }
+      .hero h1 {
+        font-size: clamp(2.8rem, 8vw, 6rem);
+        font-weight: 400;
+        line-height: 1;
+        margin: 1.2rem 0;
+        max-width: 14ch;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--brass-bright);
+      }
+      .hero p.lede {
+        max-width: 42ch;
+        color: var(--cream-dim);
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+      .hero .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      /* ── Section shells ──────────────────────── */
+      section.block {
+        padding: 96px 0;
+      }
+      .section-head {
+        max-width: 640px;
+      }
+      .section-head h2 {
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-weight: 400;
+        line-height: 1.05;
+        margin: 0.9rem 0;
+      }
+      .section-head p {
+        color: var(--cream-dim);
+        font-size: 1.05rem;
+      }
+      .hr {
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--line),
+          transparent
+        );
+        border: 0;
+      }
+
+      /* ── Intro statement ─────────────────────── */
+      .statement {
+        background: var(--espresso-2);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .statement .rail {
+        display: grid;
+        gap: 2.5rem;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 860px) {
+        .statement .rail {
+          grid-template-columns: 1.1fr 1fr;
+          align-items: center;
+        }
+      }
+      .statement .big {
+        font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+        font-weight: 400;
+        line-height: 1.25;
+      }
+      .statement .big em {
+        font-style: italic;
+        color: var(--brass-bright);
+      }
+
+      /* ── Spaces ──────────────────────────────── */
+      .spaces-grid {
+        display: grid;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-top: 56px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 760px) {
+        .spaces-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .space-card {
+        background: var(--panel);
+        padding: 40px 32px;
+        transition: background 0.4s ease;
+      }
+      .space-card:hover {
+        background: var(--panel-2);
+      }
+      .space-card .num {
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        color: var(--green-bright);
+      }
+      .space-card h3 {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 1rem 0 0.2rem;
+      }
+      .space-card .cap {
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--brass-bright);
+        margin-bottom: 0.9rem;
+      }
+      .space-card p {
+        color: var(--cream-dim);
+        font-size: 0.95rem;
+      }
+
+      /* ── Experience (image + copy bands) ─────── */
+      .band {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 860px) {
+        .band {
+          grid-template-columns: 1fr 1fr;
+        }
+        .band.reverse .media {
+          order: 2;
+        }
+      }
+      .band .media {
+        position: relative;
+        min-height: 340px;
+      }
+      .band .media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .band .copy {
+        padding: 72px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media (max-width: 560px) {
+        .band .copy {
+          padding: 56px 24px;
+        }
+      }
+      .band .copy h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        line-height: 1.1;
+        margin: 0.8rem 0 1rem;
+      }
+      .band .copy p {
+        color: var(--cream-dim);
+      }
+      .band .copy ul {
+        list-style: none;
+        margin-top: 1.4rem;
+        display: grid;
+        gap: 0.7rem;
+      }
+      .band .copy li {
+        display: flex;
+        gap: 0.7rem;
+        align-items: baseline;
+        font-size: 0.98rem;
+        color: var(--cream-dim);
+      }
+      .band .copy li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brass);
+        flex: none;
+        transform: translateY(-2px);
+      }
+
+      /* ── Steps ───────────────────────────────── */
+      .steps {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        margin-top: 48px;
+      }
+      @media (min-width: 760px) {
+        .steps {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .step {
+        border-top: 2px solid var(--green-bright);
+        padding-top: 1.2rem;
+      }
+      .step .k {
+        font-size: 0.68rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--brass-bright);
+      }
+      .step h3 {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        font-size: 1.35rem;
+        margin: 0.5rem 0 0.4rem;
+      }
+      .step p {
+        color: var(--cream-dim);
+        font-size: 0.95rem;
+      }
+
+      /* ── Request / form ──────────────────────── */
+      #request {
+        background: var(--espresso-2);
+        border-top: 1px solid var(--line);
+      }
+      .form-head {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto 40px;
+      }
+      .form-head h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        margin: 0.9rem 0;
+      }
+      .form-head p {
+        color: var(--cream-dim);
+      }
+      .form-shell {
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.8);
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      .form-shell iframe {
+        width: 100%;
+        height: 1280px;
+        border: 0;
+        border-radius: 6px;
+        display: block;
+      }
+      @media (max-width: 680px) {
+        .form-shell iframe {
+          height: 1620px;
+        }
+      }
+      .form-fallback {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 0.85rem;
+        color: var(--cream-faint);
+      }
+      .form-fallback a {
+        color: var(--brass-bright);
+        border-bottom: 1px solid currentColor;
+      }
+
+      /* ── Footer ──────────────────────────────── */
+      footer {
+        background: var(--espresso);
+        border-top: 1px solid var(--line);
+        padding: 64px 0 40px;
+      }
+      .foot-grid {
+        display: grid;
+        gap: 2.5rem;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 760px) {
+        .foot-grid {
+          grid-template-columns: 1.4fr 1fr 1fr;
+        }
+      }
+      footer h4 {
+        font-size: 0.68rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--brass-bright);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+      footer p,
+      footer a.line {
+        color: var(--cream-dim);
+        font-size: 0.95rem;
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      footer a.line:hover {
+        color: var(--brass-bright);
+      }
+      .foot-note {
+        margin-top: 44px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        color: var(--cream-faint);
+      }
+
+      /* ── Reveal animation ────────────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══ Top bar ══════════════════════════════════════════ -->
+    <header class="bar" id="bar">
+      <div class="rail bar-inner">
+        <a class="wordmark" href="#top" aria-label="Stillhouse Steakhouse — home">
+          <span class="name serif">Still<b>house</b></span>
+          <span class="sub">Steakhouse · Nashville</span>
+        </a>
+        <a href="#request" class="btn btn-brass">Request a Date</a>
+      </div>
+    </header>
+
+    <!-- ══ Hero ═════════════════════════════════════════════ -->
+    <section class="hero" id="top">
+      <img
+        class="bg"
+        src="images/private-dining-room.jpg"
+        alt="A private dining room set with white linen at Stillhouse Steakhouse"
+      />
+      <div class="scrim"></div>
+      <div class="rail">
+        <p class="eyebrow reveal">Private Events · Nashville</p>
+        <h1 class="serif reveal">
+          Your table for <em>the occasion</em>
+        </h1>
+        <p class="lede reveal">
+          From intimate dinners to full buyouts, Stillhouse Steakhouse hosts
+          Nashville's celebrations — hand-cut steaks, a raw bar, and a private
+          room that feels like it was set just for you.
+        </p>
+        <div class="cta-row reveal">
+          <a href="#request" class="btn btn-brass">Request Your Date</a>
+          <a href="#spaces" class="btn btn-ghost">Explore the Spaces</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Statement ════════════════════════════════════════ -->
+    <section class="statement block">
+      <div class="rail">
+        <div class="big serif reveal">
+          A steakhouse built for gathering —
+          <em>and a team that makes it effortless.</em>
+        </div>
+        <p class="reveal" style="color: var(--cream-dim)">
+          One dedicated events coordinator handles every detail: the room, the
+          menu, the wine, the timing. You tell us the occasion and the
+          headcount; we'll shape the rest and have the table ready when your
+          guests arrive.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ Spaces ═══════════════════════════════════════════ -->
+    <section class="block" id="spaces">
+      <div class="rail">
+        <div class="section-head reveal">
+          <p class="eyebrow">The Spaces</p>
+          <h2 class="serif">Rooms for every kind of night</h2>
+          <p>
+            Three ways to host under one roof in Nashville — each with its own
+            character, each with the full Stillhouse kitchen behind it.
+          </p>
+        </div>
+
+        <div class="spaces-grid">
+          <div class="space-card reveal">
+            <div class="num serif">01</div>
+            <h3>The Chef's Table</h3>
+            <!-- Capacities are placeholders — confirm with the venue. -->
+            <div class="cap">Seats up to 14</div>
+            <p>
+              An intimate, semi-private table for milestone dinners and small
+              celebrations, paced by the kitchen.
+            </p>
+          </div>
+          <div class="space-card reveal">
+            <div class="num serif">02</div>
+            <h3>The Private Room</h3>
+            <div class="cap">Seats up to 40</div>
+            <p>
+              A room of your own with its own service and a dedicated host — for
+              rehearsal dinners, corporate evenings, and parties worth marking.
+            </p>
+          </div>
+          <div class="space-card reveal">
+            <div class="num serif">03</div>
+            <h3>Full Buyout</h3>
+            <div class="cap">Up to 180 guests</div>
+            <p>
+              The whole steakhouse, the whole team — a tailored menu and flow for
+              weddings, launches, and big occasions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ══ Experience band 1 ════════════════════════════════ -->
+    <section class="band">
+      <div class="media reveal">
+        <img
+          src="images/private-event.jpg"
+          alt="Guests gathered for a private event in the Stillhouse dining room"
+          loading="lazy"
+        />
+      </div>
+      <div class="copy">
+        <p class="eyebrow reveal">The Room</p>
+        <h2 class="reveal">An evening that runs itself</h2>
+        <p class="reveal">
+          Warm wood, white linen, and low light — the kind of room where a toast
+          lands and the night takes its time. Your coordinator handles
+          place settings, pacing, AV, and any detail you dream up.
+        </p>
+        <ul class="reveal">
+          <li>Dedicated event coordinator from first call to last pour</li>
+          <li>Custom printed menus &amp; seating on request</li>
+          <li>Wine pairings and a full bar, built to your taste</li>
+          <li>AV-ready for toasts, slideshows, and presentations</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ Experience band 2 ════════════════════════════════ -->
+    <section class="band reverse">
+      <div class="media reveal">
+        <img
+          src="images/table-spread.jpg"
+          alt="A spread of steaks, sides, and cocktails at Stillhouse Steakhouse"
+          loading="lazy"
+        />
+      </div>
+      <div class="copy">
+        <p class="eyebrow reveal">The Table</p>
+        <h2 class="reveal">Steakhouse classics, served family style</h2>
+        <p class="reveal">
+          Hand-cut steaks and chops, a chilled raw bar, shareable starters, and
+          sides built for the middle of the table. We'll design a prix-fixe or
+          family-style menu around your group — and flex it for every guest.
+        </p>
+        <ul class="reveal">
+          <li>Hand-cut steaks &amp; nightly seafood</li>
+          <li>Raw bar — oysters, shrimp, and chilled shellfish</li>
+          <li>Shareable starters and signature sides</li>
+          <li>Dietary and allergy needs handled with care</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ══ How it works ═════════════════════════════════════ -->
+    <section class="block">
+      <div class="rail">
+        <div class="section-head reveal">
+          <p class="eyebrow">How It Works</p>
+          <h2 class="serif">Three steps to a booked night</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="k">Step 01</div>
+            <h3 class="serif">Tell us about it</h3>
+            <p>
+              Send your date, headcount, and the occasion through the form below.
+              It takes about two minutes.
+            </p>
+          </div>
+          <div class="step reveal">
+            <div class="k">Step 02</div>
+            <h3 class="serif">We design the night</h3>
+            <p>
+              Your coordinator follows up to lock the room, build the menu, and
+              handle every detail.
+            </p>
+          </div>
+          <div class="step reveal">
+            <div class="k">Step 03</div>
+            <h3 class="serif">Celebrate</h3>
+            <p>
+              Arrive to a set table in the heart of Nashville. We'll take it from
+              there.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Request / Tripleseat form ════════════════════════ -->
+    <section class="block" id="request">
+      <div class="rail">
+        <div class="form-head reveal">
+          <p class="eyebrow">Request Your Date</p>
+          <h2>Start your event inquiry</h2>
+          <p>
+            Fill out the party request below for our Nashville location and our
+            events team will be in touch to plan every detail.
+          </p>
+        </div>
+
+        <!--
+          Tripleseat party-request widget (Nashville location, form 37321).
+          This iframes the hosted Tripleseat form so submissions flow straight
+          into the venue's Tripleseat account.
+
+          TO USE STILLHOUSE'S OWN TRIPLESEAT ACCOUNT / AUTO-RESIZING EMBED:
+          In Tripleseat → Settings → Lead Forms → Embed, copy the official
+          snippet (it includes a lead_form_id + public_key and auto-sizes), and
+          replace this iframe with:
+            <div id="tripleseat_embed_form"></div>
+            <script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=XXId&public_key=XXKey"></script>
+        -->
+        <div class="form-shell reveal">
+          <iframe
+            src="https://halssteakhouse.tripleseat.com/party_request/37321"
+            title="Stillhouse Steakhouse Nashville — private event request form"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="form-fallback">
+          Having trouble with the form?
+          <a
+            href="https://halssteakhouse.tripleseat.com/party_request/37321"
+            target="_blank"
+            rel="noopener"
+            >Open it in a new tab →</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ Footer ═══════════════════════════════════════════ -->
+    <footer>
+      <div class="rail">
+        <div class="foot-grid">
+          <div>
+            <a class="wordmark" href="#top" style="margin-bottom: 1rem">
+              <span class="name serif" style="font-size: 1.5rem"
+                >Still<b>house</b></span
+              >
+              <span class="sub">Steakhouse · Nashville</span>
+            </a>
+            <p style="max-width: 34ch; margin-top: 1rem">
+              A Nashville steakhouse built for gathering — private dining, raw
+              bar, and hand-cut steaks for every occasion.
+            </p>
+          </div>
+
+          <div>
+            <h4>Visit</h4>
+            <!-- Replace with the venue's real address & map link. -->
+            <p>[Street address]<br />Nashville, TN</p>
+            <a class="line" href="#request">Request an event →</a>
+          </div>
+
+          <div>
+            <h4>Events</h4>
+            <!-- Replace with the venue's real events contact. -->
+            <a class="line" href="tel:+1">[Phone number]</a>
+            <a class="line" href="mailto:events@stillhousenashville.com"
+              >events@stillhousenashville.com</a
+            >
+          </div>
+        </div>
+
+        <div class="foot-note">
+          <span>© <span id="yr"></span> Stillhouse Steakhouse, Nashville.</span>
+          <span>Private events · by request</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Year
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Sticky bar background on scroll
+      var bar = document.getElementById("bar");
+      var onScroll = function () {
+        bar.classList.toggle("scrolled", window.scrollY > 32);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Reveal on scroll
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      );
+      document.querySelectorAll(".reveal").forEach(function (el, i) {
+        // slight stagger for groups
+        el.style.transitionDelay = (i % 4) * 0.06 + "s";
+        io.observe(el);
+      });
+    </script>
+  </body>
+</html>
